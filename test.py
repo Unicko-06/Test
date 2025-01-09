@@ -1,11 +1,8 @@
-# Chrome Dinosaur Game using Pygame
 import pygame
 import random
 
-# Initialize pygame
 pygame.init()
 
-# Constants
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 400
 GROUND_HEIGHT = SCREEN_HEIGHT - 30
@@ -16,10 +13,8 @@ FPS = 60
 GRAVITY = 0.6
 JUMP_STRENGTH = -12
 
-# Load assets
 FONT = pygame.font.SysFont('Arial', 30)
 
-# Dinosaur class
 class Dinosaur(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
@@ -46,7 +41,6 @@ class Dinosaur(pygame.sprite.Sprite):
     def gravity(self):
         self.velocity_y += GRAVITY
 
-# Obstacle class
 class Obstacle(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
@@ -61,7 +55,6 @@ class Obstacle(pygame.sprite.Sprite):
         if self.rect.x < -self.rect.width:
             self.kill()
 
-# Game class
 class ChromeDinoGame:
     def __init__(self):
         self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -167,7 +160,6 @@ class ChromeDinoGame:
         self.screen.blit(restart_text, (SCREEN_WIDTH // 2 - 150, SCREEN_HEIGHT // 2))
         pygame.display.flip()
 
-# Main loop
 if __name__ == '__main__':
     game = ChromeDinoGame()
     game.run()
